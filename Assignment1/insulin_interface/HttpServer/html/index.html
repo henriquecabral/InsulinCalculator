@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Insulin Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"> </script>
+  
+  <style type="text/css">
+	  .jumbotron {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+  </style>
+
+</head>
+
+<body>
+
+	<div class="jumbotron text-center">
+	  <h4>Insulin Calculator</h4>
+	</div>
+  
+	<div class="container">
+	  <div class="row">
+	    <div class="col-sm-3">
+	      	<h4 style ='background-color: grey'>Mealtime insulin dose - standard insulin sensitivity</h4>
+	      	<form data-toggle="validator" role="form" action="javascript:submit()">
+			<div class="form-group">
+				<label for="carbohydrateAmount" class="control-label">Total grams of carbohydrates in the meal</label>
+				<input type="number" min=60 max=120 class="form-control" id="carbohydrateAmount" required>
+			</div>
+			<div class="form-group">
+				<label for="carbohydrateToInsulinRatio">Total grams of carbohydrates processed by 1 unit of rapid acting insulin</label>
+				<input type="number" min=10 max=15 value=12 class="form-control" id="carbohydrateToInsulinRatio" required>
+			</div>
+			<div class="form-group">
+				<label for="preMealBloodSugar">Actual blood sugar level measured before the meal</label>
+				<input type="number" min=120 max=250 class="form-control" id="preMealBloodSugar" required>
+			</div>
+			<div class="form-group">
+				<label for="targetBloodSugar">Target blood sugar before the meal</label>
+				<input type="number" min=80 max=120 class="form-control" id="targetBloodSugar" required>
+			</div>
+			<div class="form-group">
+				<label for="personalSensitivity">Individual sensitivity</label>
+				<input type="number" min=15 max=100 value=50 class="form-control" id="personalSensitivity" required>
+			</div>
+			<div class="form-group">
+    			<button type="submit" class="btn btn-default">Calculate insulin dose</button>
+  			</div>
+			</form>
+	    </div>
+	    <form data-toggle="validator" role="form" action="javascript:submit()">
+	    <div class="col-sm-3">
+	      	<h4 style ='background-color: grey'>Mealtime insulin dose - personal insulin sensitivity</h4>
+	      	<div class="form-group">
+				<label for="carbohydrateAmount">Total grams of carbohydrates in the meal</label>
+				<input type="number" min=60 max=120 class="form-control" id="carbohydrateAmount"required>
+			</div>
+			<div class="form-group">
+				<label for="carbohydrateToInsulinRatio">Total grams of carbohydrates processed by 1 unit of rapid acting insulin</label>
+				<input type="number" min=10 max=15 value=12 class="form-control" id="carbohydrateToInsulinRatio" required>
+			</div>
+			<div class="form-group">
+				<label for="preMealBloodSugar">Actual blood sugar level measured before the meal</label>
+				<input type="number" min=120 max=250 class="form-control" id="preMealBloodSugar"required>
+			</div>
+			<div class="form-group">
+				<label for="targetBloodSugar">Target blood sugar before the meal</label>
+				<input type="number" min=80 max=120 class="form-control" id="targetBloodSugar" required>
+			</div>
+			<div class="form-group">
+				<label for="physicalActivityLevel">Today physical activity level</label>
+				<input type="number" min=0 max=10 class="form-control" id="physicalActivityLevel" required>
+			</div>
+	    </div>
+	    <div class="col-sm-3">
+	    	<div class="col-sm-6">
+				<div class="form-group">
+					<label for="physicalActivitySamples">Physical Activity</label>
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples1" required>
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples2" required>
+				</div>
+				<div class="form-group">
+					 <input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples3">
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples4">
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples5">
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples6">
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples7">
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples8">
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples9">
+				</div>
+				<div class="form-group">
+					<input type="number" min=0 max=10 class="form-control" id="physicalActivitySamples10">
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="bloodSugarDropSamples">Blood<br>Sugar</label>
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples1" required>
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples2" required>
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples3">
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples4">
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples5">
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples6">
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples7">
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples8">
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples9">
+				</div>
+				<div class="form-group">
+					<input type="number" min=15 max=100 class="form-control" id="bloodSugarDropSamples10">
+				</div>
+			</div>
+			<div class="form-group">
+    			<button type="submit" class="btn btn-default">Calculate insulin dose</button>
+  			</div>
+		</div>
+		</form>
+		<div class="col-sm-3">
+	      	<h4 style ='background-color: grey'>Background insulin dose</h4>
+	      	<form id="backgroundInsulinDose" data-toggle="validator" role="form" action="javascript:submit()">
+	     	<div class="form-group">
+				<label for="bodyWeight">Weight in kilograms</label>
+				<input type="number" min=40 max=130 class="form-control" name="bodyWeight" id="bodyWeight" required>
+			</div>
+			<div class="form-group">
+    			<button type="submit" class="btn btn-default">Calculate insulin dose</button>
+  			</div>
+			</form>
+		</div>
+	  </div>
+	</div>
+	<script>
+		function objectifyForm(formArray) 
+		{
+		  var returnArray = {};
+		  for (var i = 0; i < formArray.length; i++){
+		    returnArray[formArray[i]['name']] = formArray[i]['value'];
+		  }
+		  return returnArray;
+		}
+		function submit()
+		{
+  			var data = JSON.stringify(objectifyForm($('#backgroundInsulinDose').serializeArray()));
+			var url = "/backgroundInsulinDose";
+			$.ajax({
+  				type: "POST",
+  				url: url,
+  				data: data,
+  				success: function(result){
+            		alert("Oi");
+            		console.log(result);
+            		/*var obj = jQuery.parseJSON(result);
+            		obj["result"];*/
+        		},
+        		error: function(result){
+            		alert("bad text");
+            		console.log(result);
+         		}
+			});
+		}
+	</script>
+</body>
+</html>
