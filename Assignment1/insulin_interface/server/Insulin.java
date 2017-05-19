@@ -24,7 +24,7 @@ public class Insulin implements InsulinDoseCalculator{
 		if(bodyWeight < 40 || bodyWeight > 130)
 			return -1;
 
-		return (int) Math.round((bodyWeight*0.55)/50);
+		return (int) Math.round((bodyWeight*0.55)/2);
 	}
 	@WebMethod
 	public int personalSensitivityToInsulin(int physicalActivityLevel, int[] physicalActivitySamples, int[] bloodSugarDropSamples)
