@@ -58,7 +58,7 @@ public class Insulin implements InsulinDoseCalculator{
 	public static void main(String[] argv)
 	{
 		Object object = new Insulin();
-		Endpoint endpoint = Endpoint.publish("http://localhost:8081/insulin", object);
+		Endpoint endpoint = Endpoint.publish("http://10.17.1.7:8081/insulin", object);
 		System.out.println("Server Up!");
   	}
 	
