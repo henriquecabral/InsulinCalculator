@@ -16,7 +16,7 @@ public class Insulin implements InsulinDoseCalculator{
 		if(targetBloodSugar > preMealBloodSugar)
 			return 0;
 
-		return (int) Math.round(((double)carbohydrateAmount/carbohydrateToInsulinRatio/personalSensitivity*50)+((double)(preMealBloodSugar-targetBloodSugar)/personalSensitivity));
+		return (int) Math.round(((double)carbohydrateAmount/carbohydrateToInsulinRatio/personalSensitivity*50)+((double(preMealBloodSugar-targetBloodSugar)/personalSensitivity)));
 	}
 	@WebMethod
 	public int backgroundInsulinDose(int bodyWeight)
