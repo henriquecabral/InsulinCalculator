@@ -4,11 +4,11 @@ Projecto desenvolvido no âmbito da unidade curricular "Qualidade e Confiabildia
 
 Neste projecto foram desenvolvidas três componentes distintas:
 
--> webService para calcular valores de insulina (Java)
+* webService para calcular valores de insulina (Java)
 
--> Frontend para os utilizaodres fazerem o calculo da insulina (HTML/CSS/Javascript/AJAX/JQuery/JSON)
+* Frontend para os utilizaodres fazerem o calculo da insulina (HTML/CSS/Javascript/AJAX/JQuery/JSON)
 
--> WebServer e Votador do N-Version Programming (Java)
+* WebServer e Votador do N-Version Programming (Java)
 
 Um utilizador realiza um pedido na página Html para ser realizado o cálculo das doses de insulina que deve tomar. O WebServer recebe o pedido e manda para 3 webServices distintos para calcularem o valor. Quando recebe os valores, realiza uma votação e só depois envia o valor final.
 
