@@ -6,7 +6,7 @@ Neste projecto foram desenvolvidas três componentes distintas:
 
 -> webService para calcular valores de insulina (Java)
 
--> Frontend para os utilizaodres fazerem o calculo da insulina (HTML/CSS/Javascript/AJAX/JSON)
+-> Frontend para os utilizaodres fazerem o calculo da insulina (HTML/CSS/Javascript/AJAX/JQuery/JSON)
 
 -> WebServer e Votador do N-Version Programming (Java)
 
